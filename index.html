@@ -3,23 +3,41 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://rochesterepoxyflooringpros.com/#localbusiness",
+      "@type": "Organization",
+      "@id": "https://rochesterepoxyflooringpros.com/#organization",
       "name": "Rochester Epoxy Flooring Pros",
       "url": "https://rochesterepoxyflooringpros.com",
       "telephone": "+13602841350",
-      "areaServed": {
-        "@type": "City",
-        "name": "Rochester",
-        "sameAs": "https://en.wikipedia.org/wiki/Rochester,_Washington"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 46.8226,
-        "longitude": -123.0954
-      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Rochester"
+        },
+        {
+          "@type": "City",
+          "name": "Grand Mound"
+        },
+        {
+          "@type": "City",
+          "name": "Centralia"
+        },
+        {
+          "@type": "City",
+          "name": "Chehalis"
+        },
+        {
+          "@type": "City",
+          "name": "Tenino"
+        }
+      ],
       "email": "info@rochesterepoxyflooringpros.com",
-      "image": "https://rochesterepoxyflooringpros.com/assets/images/hero.jpg"
+      "image": "https://rochesterepoxyflooringpros.com/assets/images/hero.jpg",
+      "knowsAbout": [
+        "Epoxy flooring",
+        "Polyaspartic coatings",
+        "Concrete diamond grinding",
+        "Concrete moisture vapor testing"
+      ]
     },
     {
       "@type": "Service",
@@ -67,7 +85,7 @@
 }
 </script>
 </head><body><a href="#main" class="skip-link">Skip to content</a><header class="site-header"><nav class="nav"><a class="nav__logo" href="index.html"><strong>Rochester Epoxy Flooring Pros</strong></a><button class="nav__toggle" aria-label="Menu">☰</button><ul class="nav__links" id="navlinks"><li class="has-dropdown"><a href="services.html">Services</a><ul class="dropdown"><li><a href="garage-floor-epoxy.html">Garage Floor Epoxy</a></li><li><a href="commercial-epoxy-coatings.html">Commercial Epoxy Coatings</a></li><li><a href="metallic-and-decorative-epoxy.html">Metallic &amp; Decorative Epoxy</a></li><li><a href="concrete-surface-preparation.html">Concrete Surface Preparation</a></li></ul></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a class="nav__call wc-phone" href="tel:+13602841350">(360) 284-1350</a></li></ul></nav></header><main id="main"><section class="hero"><div class="hero__media"><img src="assets/images/hero.jpg" alt="Epoxy Flooring in Rochester"></div><div class="hero__inner"><p class="hero__eyebrow">Rochester, WA Epoxy Specialists</p><h1>Epoxy Flooring in Rochester, WA</h1><p>Industrial-grade garage, shop, and commercial coatings engineered for Pacific Northwest moisture.</p><div class="hero__cta"><a class="btn btn--lg" href="#quote-section">Get Instant Quote</a><a class="btn btn--ghost btn--lg wc-phone" href="tel:+13602841350">(360) 284-1350</a></div><div class="hero__sub"><a class="hero__jump" href="#local-details">Check service coverage &amp; local details ↓</a></div></div></section><section class="section" id="quote-section" style="padding:48px 0;background:var(--soft);"><div class="wrap split"><div><span class="badge" style="background:#e0f2fe;color:#0369a1;padding:4px 12px;border-radius:20px;font-weight:700;">Fast Free Estimates</span><h2 style="margin-top:14px;">Get an Exact Quote for Your Concrete Floor</h2><p class="section__lead">Whether you need durable garage flake epoxy, warehouse floor protection, or decorative metallic finishes, our local Rochester crew provides transparent estimates with zero pressure.</p><ul class="local-points" style="margin-top:16px;"><li><strong>Free Moisture Vapor Testing:</strong> Every slab evaluated for hydrostatic vapor emissions before primer application.</li><li><strong>Mechanical Diamond Grinding:</strong> CSP-2/CSP-3 concrete profiling with HEPA vacuums for lifelong adhesion.</li><li><strong>Commercial Polyaspartic:</strong> 100% UV-stable topcoats with rapid cure times and zero hot-tire pickup.</li></ul><p style="margin-top:20px;">Prefer to speak with an estimator? Call <a class="wc-phone" href="tel:+13602841350" style="font-weight:700;">(360) 284-1350</a>.</p></div><div class="form-card" style="box-shadow:0 8px 30px rgba(0,0,0,0.07);border-top:4px solid var(--brand);"><h3 style="margin-top:0;">Request a Free Quote</h3><p class="muted" style="margin-bottom:18px;">Fast pricing for Rochester &amp; South Sound projects.</p><form class="lead-form" action="/api/contact" method="post"><div class="field"><label for="home-name">Your Name</label><input id="home-name" name="name" autocomplete="name" required placeholder="Full Name"></div><div class="form-row"><div class="field"><label for="home-email">Email</label><input id="home-email" name="email" type="email" autocomplete="email" required placeholder="name@example.com"></div><div class="field"><label for="home-phone">Phone <span class="opt">optional</span></label><input id="home-phone" name="phone" type="tel" autocomplete="tel" placeholder="(360) 000-0000"></div></div><div class="field"><label for="home-intent">Service Needed</label><select id="home-intent" name="intent"><option value="Garage Floor Epoxy">Garage Floor Epoxy</option><option value="Commercial Epoxy Coatings">Commercial Epoxy Coatings</option><option value="Metallic & Decorative Epoxy">Metallic &amp; Decorative Epoxy</option><option value="Concrete Surface Preparation">Concrete Surface Preparation</option><option value="Other / Free Inspection">Other / Free Inspection</option></select></div><div class="field"><label for="home-message">Square Footage &amp; Project Details</label><textarea id="home-message" name="message" rows="3" placeholder="Approximate sq ft, floor condition, or timing..."></textarea></div><div class="hp" aria-hidden="true"><label for="home-website">Website</label><input id="home-website" name="website" tabindex="-1" autocomplete="off"></div><button class="btn btn--lg" type="submit" style="width:100%;">Get Free Quote</button><p class="form-note">We respect your privacy. No spam. Direct call: <a class="wc-phone" href="tel:+13602841350">(360) 284-1350</a>.</p></form></div></div></section><section class="section"><div class="wrap"><h2>Transform Your Concrete Floors in Rochester, Washington</h2><div class="section__lead"><p>From residential two-car garages and rural hobby workshops to commercial warehouses and retail showrooms, Rochester Epoxy Flooring Pros provides seamless, ultra-durable concrete coating solutions built for South Sound conditions.</p></div></div></section>
-<section class="section section--alt"><div class="wrap"><h2>Rochester&#39;s Trusted Concrete Coating Specialists</h2><p>We are dedicated concrete restoration and resinous floor professionals serving Rochester, Grand Mound, Centralia, and Thurston County. Our certified technicians pair industrial planetary grinders with premium commercial-grade resins to deliver floors that last decades.</p><a class="btn" href="about.html">About us</a></div></section>
+<section class="section section--alt"><div class="wrap"><h2>Rochester&#39;s Trusted Concrete Coating Specialists</h2><p>Serving Rochester, Grand Mound, Centralia, Chehalis, Tenino and South Thurston County. Every project runs the same sequence: moisture vapor testing, mechanical diamond grinding to a CSP-2/CSP-3 profile, then a 100% solids epoxy base with a UV-stable polyaspartic topcoat — the specification that determines whether a floor lasts two decades or two winters.</p><a class="btn" href="about.html">About us</a></div></section>
 <section class="section image-section"><div class="wrap"><img src="assets/images/img-1.jpg" alt="Rochester Epoxy Flooring Pros Epoxy Flooring" loading="lazy"></div></section>
 <section class="section"><div class="wrap"><h2>Services</h2><p class="section__lead">Explore our specialized resinous floor and concrete preparation solutions in Rochester.</p><div class="grid grid--3"><div class="card"><h3>Garage Floor Epoxy</h3><p>Durable multi-layer flake and solid epoxy systems designed to resist hot tires, salt, and vehicle fluids.</p><a href="garage-floor-epoxy.html">Garage Floor Epoxy in Rochester →</a></div><div class="card"><h3>Commercial Epoxy Coatings</h3><p>Heavy-duty seamless resinous flooring for warehouses, retail spaces, agricultural facilities, and workshops.</p><a href="commercial-epoxy-coatings.html">Commercial Epoxy Coatings in Rochester →</a></div><div class="card"><h3>Metallic &amp; Decorative Epoxy</h3><p>Custom 3D marbleized metallic epoxy floors providing one-of-a-kind showroom aesthetics.</p><a href="metallic-and-decorative-epoxy.html">Metallic &amp; Decorative Epoxy in Rochester →</a></div><div class="card"><h3>Concrete Surface Preparation</h3><p>Precision planetary diamond grinding, shot blasting, and crack repair to guarantee lifelong adhesion.</p><a href="concrete-surface-preparation.html">Concrete Surface Preparation in Rochester →</a></div></div></div></section>
 <section class="section section--alt" id="local-details"><div class="wrap"><h2>Durable, Moisture-Mitigating Epoxy Flooring in Rochester</h2><div class="section__lead"><p>Rochester sits within the Chehalis River drainage basin where high water tables, damp maritime winters, and glacial outwash gravels create persistent hydrostatic vapor pressure beneath concrete slabs. Unsealed garage floors, pole barns, and commercial shops along Highway 12 and Albany Street frequently suffer from dampness, efflorescence dusting, and winter spalling. Our industrial-strength epoxy and polyaspartic coating systems penetrate deeply into diamond-ground concrete pores, establishing an impenetrable moisture-vapor barrier that withstands heavy agricultural machinery, vehicle hot-tire pickup, and regional freeze-thaw cycles.</p></div><ul class="local-points"><li>Mechanical diamond grinding with HEPA dust containment for superior profile adhesion on Rochester outwash slabs.</li><li>Vapor-barrier base coats engineered to block high Chehalis Basin hydrostatic moisture emissions.</li><li>Rapid-cure polyaspartic topcoats providing 100% UV stability and zero hot-tire pickup.</li></ul><div class="authority-links"><h3>Local Resources &amp; Permits</h3><ul><li><a href="https://www.thurstoncountywa.gov/departments/community-planning-and-economic-development" target="_blank" rel="noopener noreferrer"><strong>Thurston County Community Planning &amp; Economic Development</strong></a> — <span class="muted">Building permits and commercial coatings guidelines</span></li><li><a href="https://gmchamber.com" target="_blank" rel="noopener noreferrer"><strong>Grand Mound Rochester Chamber of Commerce</strong></a> — <span class="muted">Regional infrastructure and business directory</span></li></ul></div></div></section>
