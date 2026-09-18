@@ -1,0 +1,112 @@
+[
+  {
+    "postNumber": 1,
+    "scheduledDate": "2026-09-18",
+    "keyword": "epoxy flooring rochester",
+    "pattern": "{service} {town}",
+    "intent": "primary commercial",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 2,
+    "scheduledDate": "2026-09-21",
+    "keyword": "epoxy flooring cost rochester",
+    "pattern": "{service} cost {town}",
+    "intent": "commercial research",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 3,
+    "scheduledDate": "2026-09-25",
+    "keyword": "emergency epoxy flooring near me",
+    "pattern": "emergency {service} near me",
+    "intent": "urgent commercial",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 4,
+    "scheduledDate": "2026-09-28",
+    "keyword": "how to know when to replace epoxy flooring",
+    "pattern": "how to {problem}",
+    "intent": "informational",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 5,
+    "scheduledDate": "2026-10-02",
+    "keyword": "winter storm epoxy flooring rochester",
+    "pattern": "{seasonal} {service}",
+    "intent": "seasonal",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 6,
+    "scheduledDate": "2026-10-05",
+    "keyword": "garage floor epoxy rochester",
+    "pattern": "{subservice} {town}",
+    "intent": "sub-niche commercial",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 7,
+    "scheduledDate": "2026-10-09",
+    "keyword": "garage floor epoxy cost rochester",
+    "pattern": "{subservice} cost {town}",
+    "intent": "commercial research",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 8,
+    "scheduledDate": "2026-10-12",
+    "keyword": "epoxy flooring vs garage floor epoxy",
+    "pattern": "{service} vs {subservice}",
+    "intent": "comparison",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 9,
+    "scheduledDate": "2026-10-16",
+    "keyword": "commercial epoxy coatings rochester",
+    "pattern": "{subservice} {town}",
+    "intent": "sub-niche commercial",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  },
+  {
+    "postNumber": 10,
+    "scheduledDate": "2026-10-19",
+    "keyword": "commercial epoxy coatings cost rochester",
+    "pattern": "{subservice} cost {town}",
+    "intent": "commercial research",
+    "searchVolume": null,
+    "cpc": null,
+    "geo": "Rochester",
+    "status": "UNVALIDATED"
+  }
+]
