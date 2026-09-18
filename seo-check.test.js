@@ -87,8 +87,22 @@ assert.doesNotMatch(notFound, /Olympia|Tumwater|Lacey/, '404 page must use the R
 const careers = fs.readFileSync(path.join(root, 'careers.html'), 'utf8');
 assert.match(careers, /<meta name="robots" content="noindex,follow">/, 'contractor recruiting page should not compete in search');
 
-const digest = (file) => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');
-assert.equal(digest('assets/images/hero.jpg'), digest('assets/images/img-2.jpg'), 'hero must use the relevant floor-preparation image');
-assert.doesNotMatch(index, /commercial concourse/i, 'hero alt text must describe the floor-preparation image');
+// Site images must not depict another company's branded jobsite. The previous
+// hero showed a "Platinum Terrazzo" sign and, before that, a ballpark concourse
+// in Fort Wayne, IN. Both were third-party work presented as this site's own.
+const imageDir = path.join(root, 'assets', 'images');
+const shippedImages = fs.readdirSync(imageDir).filter((n) => /\.(jpe?g|png|webp)$/i.test(n));
+for (const name of shippedImages) {
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    if (html.includes(`assets/images/${name}`)) break;
+  }
+}
+assert.ok(!fs.existsSync(path.join(imageDir, 'img-2.jpg')), 'the competitor-branded jobsite photo must not be shipped');
+for (const file of htmlFiles) {
+  const html = fs.readFileSync(path.join(root, file), 'utf8');
+  assert.doesNotMatch(html, /img-2\.jpg/, `${file} must not reference the removed competitor-branded image`);
+  assert.doesNotMatch(html, /commercial concourse/i, `${file} alt text must describe the image actually shown`);
+}
 
 console.log(`SEO checks passed for ${htmlFiles.length} HTML files`);
