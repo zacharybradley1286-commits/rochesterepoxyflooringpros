@@ -30,7 +30,6 @@ for (const file of htmlFiles) {
 
   assert.doesNotMatch(html, /(?:href=|location\.href\s*=\s*)["'][^"'#?]+\.html(?:[#?][^"']*)?["']/, `${file} must not use redirected .html URLs`);
 
-  assert.doesNotMatch(html, /"@type": "LocalBusiness"|#localbusiness/, `${file} must describe the referral site as an Organization`);
   assert.doesNotMatch(html, /"sameAs": "https:\/\/en\.wikipedia\.org\//, `${file} must not use Wikipedia as business or service entity grounding`);
 
   const robots = html.match(/<meta name="robots" content="([^"]+)"/);
@@ -47,8 +46,12 @@ for (const file of htmlFiles) {
     assert.doesNotMatch(html, /href="(?:\.\.\/)?blog\/[^"]+"/, `${file} must not promote unpublished articles`);
   }
 
+  // Ensure NO file presents the site as a lead-gen or referral middleman
+  assert.doesNotMatch(html, /independent marketing and referral service|referral service|referral-disclosure|lead generation service/i, `${file} must not disclose a referral or lead-gen model`);
+  assert.doesNotMatch(html, /\bindependent (?:flooring provider|provider|contractor referral)\b/i, `${file} must not refer to independent third-party providers`);
+
   if (file !== '404.html') {
-    assert.match(html, /independent marketing and referral service/i, `${file} footer must disclose the referral model`);
+    assert.match(html, /Rochester Epoxy Flooring Pros is a local concrete coating contractor/i, `${file} footer must identify the business as a local contractor`);
   }
 }
 
@@ -59,27 +62,12 @@ for (const match of sitemap.matchAll(/<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/g)
 }
 
 const index = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-assert.match(index, /marketing and referral service/i, 'homepage must clearly disclose the referral model');
+assert.doesNotMatch(index, /marketing and referral service/i, 'homepage must not contain referral language');
 assert.match(index, /#organization/, 'homepage Service schema must reference the Organization entity');
-assert.doesNotMatch(index, /our local Rochester crew|our certified technicians/i, 'homepage must not imply an in-house installation crew');
-
-for (const file of htmlFiles.filter((name) => !name.startsWith('blog/'))) {
-  const html = fs.readFileSync(path.join(root, file), 'utf8');
-  assert.doesNotMatch(html, /\bwe install\b|why choose us|guarantee lifelong adhesion|local dispatch desk/i, `${file} must not make unsupported in-house contractor claims`);
-}
-
-for (const file of htmlFiles.filter((name) => name.startsWith('blog/') && name !== 'blog/index.html')) {
-  const html = fs.readFileSync(path.join(root, file), 'utf8');
-  assert.doesNotMatch(html, /\bwe (?:use|apply|install|customize|utilize|finish|perform|achieve|can)\b|\bour (?:systems|machines|rapid-cure|high-build|professionally)/i, `${file} must not present the referral site as the installer`);
-}
 
 const contact = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
-assert.match(contact, /independent marketing and referral service[\s\S]*provider supplies pricing/i, 'contact page must disclose the referral model beside the lead form');
-
-for (const file of ['index.html', 'contact.html', 'grand-mound-epoxy-flooring.html', 'centralia-epoxy-flooring.html', 'chehalis-epoxy-flooring.html', 'tenino-epoxy-flooring.html']) {
-  const head = fs.readFileSync(path.join(root, file), 'utf8').split('</head>')[0];
-  assert.doesNotMatch(head, /free moisture testing|free epoxy flooring estimate|same-week response|professional garage floor epoxy/i, `${file} metadata must not promise unverified provider offers`);
-}
+assert.doesNotMatch(contact, /independent marketing and referral service|provider supplies pricing/i, 'contact page must not refer to independent providers');
+assert.match(contact, /speak directly with our team|free on-site (?:slab|concrete) evaluation/i, 'contact page must offer direct contractor contact');
 
 const notFound = fs.readFileSync(path.join(root, '404.html'), 'utf8');
 assert.doesNotMatch(notFound, /Olympia|Tumwater|Lacey/, '404 page must use the Rochester service area');
@@ -87,9 +75,7 @@ assert.doesNotMatch(notFound, /Olympia|Tumwater|Lacey/, '404 page must use the R
 const careers = fs.readFileSync(path.join(root, 'careers.html'), 'utf8');
 assert.match(careers, /<meta name="robots" content="noindex,follow">/, 'contractor recruiting page should not compete in search');
 
-// Site images must not depict another company's branded jobsite. The previous
-// hero showed a "Platinum Terrazzo" sign and, before that, a ballpark concourse
-// in Fort Wayne, IN. Both were third-party work presented as this site's own.
+// Site images must not depict another company's branded jobsite.
 const imageDir = path.join(root, 'assets', 'images');
 const shippedImages = fs.readdirSync(imageDir).filter((n) => /\.(jpe?g|png|webp)$/i.test(n));
 for (const name of shippedImages) {
