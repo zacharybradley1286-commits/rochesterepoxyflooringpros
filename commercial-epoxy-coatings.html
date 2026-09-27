@@ -210,11 +210,6 @@
       new FormData(form).forEach(function(val, key) { payload[key] = typeof val === 'string' ? val.trim() : val; });
       payload.source_page = payload.source_page || window.location.pathname;
       payload.site = payload.site || window.location.hostname;
-      var details = [];
-      if (payload.location) details.push('City/ZIP: ' + payload.location);
-      details.push('Source page: ' + payload.source_page);
-      details.push('Site: ' + payload.site);
-      payload.message = ((payload.message || '') + '\n\n---\n' + details.join('\n')).trim();
 
       try {
         var res = await fetch('/api/contact', {
